@@ -1,0 +1,57 @@
+# Overview
+
+Attached is a small utility framework based on LWJGL 3 for drawing sprites to
+a window.
+
+Your task is to use this framework to implement a Breakout/Arkanoid-like game
+with a paddle bouncing a ball onto bricks to remove them.
+
+Note that on Mac OS you must run the game with the JVM argument `-XstartOnFirstThread`
+due to an OS restriction.
+
+# Tech
+
+The project can be built using Gradle. Make sure to run the application in the
+main folder where it has access to the resources.
+
+Since the same task may be given to others, we ask that you keep these files
+and your submission private. Once complete, please send us the resulting code
+as an archive file or as login credentials to a protected repository online.
+
+# Specification
+
+The window contains a score bar at the top and a game area below. The score
+bar contains a score display and the player lives display, starting at 3. The
+game area contains a paddle, a ball and a number of bricks that start out in
+a rectangular layout near the top.
+
+The paddle is confined to horizontal movements between the window edges along
+the lower portion of the window, and is controlled by keyboard input on the A
+and D keys.
+
+The ball starts on the top of the paddle, and shoots upwards at the press of
+the space bar. If the ball hits the side or top of the window, it bounces
+against the surface it hit.
+
+If the ball hits a brick, the brick disappears, the player is granted points
+and the ball bounces. If the ball hits the bottom of the screen, a player
+life is deducted and the ball is reset to the paddle. If the player is out
+of lives, the game area is replaced by a "Game Over" text, and the game can
+be restarted by pressing the space bar.
+
+If the ball hits the paddle, it bounces in a direction that depends on the
+vector from the center of the paddle to the point of impact.
+
+# Restrictions
+
+You are allowed to use any open source libraries that you can motivate.
+
+Do not modify the SDK code. Only the included graphical assets may be used,
+and only the provided interface to rendering may be used - do not access
+LWJGL functions directly.
+
+# Keep in mind
+
+Try to design your implementation as if it was the base of a game, to be
+extended further. Think about how you structure your code and what trade-offs
+you are making.
