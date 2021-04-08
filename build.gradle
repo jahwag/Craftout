@@ -42,14 +42,27 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    // Lombok to generate boilerplate code
+    compile 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    // Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.8.0-M1'
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.8.0-M1")
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.8.0'
+    testCompile 'io.github.glytching:junit-extensions:2.4.0'
+
 }
 
 application {
     // Define the main class for the application
-    mainClassName = 'craftout.Main'
+    mainClassName = 'craftout.Craftout'
 }
 
 test {
-    useTestNG()
-    jvmArgs '-XstartOnFirstThread'
+    useJUnitPlatform()
+    //jvmArgs '-XstartOnFirstThread'
 }
